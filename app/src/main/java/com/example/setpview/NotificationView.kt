@@ -1,6 +1,7 @@
 package com.example.setpview
 
 import android.content.Context
+import android.content.res.TypedArray
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
@@ -17,13 +18,17 @@ class NotificationView : View {
     4. constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int)
         To create a new view instance from XML with a style from theme attribute and/or style resource.
      */
-    constructor(context: Context, attrs: AttributeSet): super(context, attrs)
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
+        val arrs:TypedArray = context.obtainStyledAttributes(attrs, R.styleable.NotificationView)
+        textSize = arrs.getDimension(R.styleable.NotificationView_notice_number_size, 0F)
+    }
 
     private val paint = Paint()
     private val texPaint = Paint()
     private var backGroundColor = Color.RED
     private var borderColor = Color.BLACK
     private var size = 320
+    private var textSize = 100F
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -41,7 +46,7 @@ class NotificationView : View {
 
     private fun drawNubmer(canvas: Canvas) {
         paint.color = borderColor
-        paint.textSize = 200F
+        paint.textSize = textSize
         canvas.drawText("1", size/2f, size/2f, paint)
 //        paint.color = borderColor
 //        paint.style = Paint.Style.FILL

@@ -5,6 +5,8 @@ import android.animation.ValueAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.DecelerateInterpolator
+import android.widget.RelativeLayout
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     private lateinit var stepView: StepView
@@ -20,5 +22,9 @@ class MainActivity : AppCompatActivity() {
             stepView.setCurrentSteps(currentStep.toInt())
         }
         animator.start()
+        val bell:RelativeLayout = findViewById(R.id.btnBellIcon)
+        bell.setOnClickListener {
+            Toast.makeText(this,"hello", Toast.LENGTH_SHORT).show()
+        }
     }
 }
