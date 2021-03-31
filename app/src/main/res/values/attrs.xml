@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StepView">
+        <attr name="baseLayer_color" format="color"/>
+        <attr name="overlay_color" format="color"/>
+        <attr name="border_width" format="dimension"/>
+        <attr name="step_text_color" format="color"/>
+        <attr name="step_text_size" format="dimension"/>
+        <attr name="step_text_number" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="NotificationView">
+        <attr name="notice_number_color" format="color"/>
+        <attr name="circleBackground_color" format="color"/>
+        <attr name="notice_number_size" format="dimension"/>
+    </declare-styleable>
+</resources>
